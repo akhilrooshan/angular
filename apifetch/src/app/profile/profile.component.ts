@@ -10,15 +10,15 @@ export class ProfileComponent implements OnInit {
   title = 'api';
   p:any;
 
-  dataP:any=[]
+  data:any=[]
  
   constructor(private userService:UsersService){
     
   
-    this.userService.getPData().subscribe((datanP:any)=>{
-      console.log(datanP)
+    this.userService.getPData().subscribe((datan:any)=>{
+      console.log(datan)
       
-      this.dataP = datanP.dataP
+      this.data = datan.data
 
 
       

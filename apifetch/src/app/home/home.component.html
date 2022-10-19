@@ -1,9 +1,9 @@
 <div class="container" mt-10>
     <div class = "row">
-      <app-profile></app-profile>
+     
       <div *ngFor = "let item of data | paginate: { itemsPerPage: 5, currentPage: p }" class = "col-md-5 p-4 d-flex">
         <div  class="card" style="margin-top: 10px;height:auto;">
-          
+          <app-profile></app-profile>
       
        
           <img src="{{ item.image}}" class="card-img-top" alt="...">

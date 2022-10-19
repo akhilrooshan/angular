@@ -21,7 +21,7 @@ export class UsersService {
 
 
   getPData(){
-    let url = "https://dummyapi.io/data/v1/user?limit=2";
+    let url = "https://dummyapi.io/data/v1/user?limit=10";
     return this.http.get(url,{
       headers:new HttpHeaders({
         'app-id':'634f7dae1447b9ee8714846b'
