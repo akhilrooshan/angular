@@ -6,10 +6,13 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from "./home/home.component";
 import {NgxPaginationModule} from 'ngx-pagination';
 import { HttpClientModule } from '@angular/common/http';
+import { ProfileComponent } from './profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    ProfileComponent,
+    
   ],
   imports: [
     

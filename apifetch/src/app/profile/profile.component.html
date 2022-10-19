@@ -1,0 +1,5 @@
+
+        <div *ngFor="let item of dataP | paginate: { itemsPerPage: 5, currentPage: p }" class="col-md-5 p-4 d-flex">
+            {{item.firstName}}
+        </div>
+ 

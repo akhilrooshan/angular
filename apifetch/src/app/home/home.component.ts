@@ -15,6 +15,7 @@ export class HomeComponent {
   title = 'api';
   p:any;
   data:any=[]
+  dataP:any=[]
  
   constructor(private userService:UsersService){
     
@@ -22,8 +23,14 @@ export class HomeComponent {
       console.log(datan)
       
       this.data = datan.data
+
+  
+
+
       
     })
+
+
   }
  
 }
