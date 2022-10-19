@@ -1,29 +1,99 @@
-<h1>
-  API Project
-</h1>
 
-<table border = "1">
-
-  <tr>
-    <td>id</td>
-    <td>title</td>
-    <td>firstName</td>
-    <td>lastName</td>
-  </tr>
-
-  <tr *ngFor = "let item of data">
-    <td>{{ item.id }}</td>
-    <td> {{ item.title }}</td>
-    <td>{{ item.firstName }}</td>
-    <td> item.lastName</td>
-  </tr>
-
-
-</table>
-
-<mat-grid-list cols="2" rowHeight="2:1">
-  <mat-grid-tile>1</mat-grid-tile>
-  <mat-grid-tile>2</mat-grid-tile>
-  <mat-grid-tile>3</mat-grid-tile>
-  <mat-grid-tile>4</mat-grid-tile>
-</mat-grid-list>
+<nav style = "border-radius: 10px;margin-top: 10px;margin-bottom: 20px;"class="navbar navbar-expand-lg bg-info" >
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Documentation</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+        
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Add User</a></li>
+              <li><a class="dropdown-item" href="#">Update User</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+         
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- <table border = "1">
+  
+    <tr>
+      <td>id</td>
+      <td>title</td>
+      <td>firstName</td>
+      <td>lastName</td>
+    </tr>
+  
+    <tr *ngFor = "let item of data">
+      <td>{{ item.id }}</td>
+      <td> {{ item.title }}</td>
+      <td>{{ item.firstName }}</td>
+      <td> item.lastName</td>
+    </tr>
+  
+  
+  </table> -->
+  <!-- 
+  <mat-grid-list cols="3" rowHeight="1:1" >
+    <mat-grid-tile *ngFor = "let item of data | paginate: { itemsPerPage: 6, currentPage: p }">
+  
+        
+  
+          <mat-grid-list  cols="3" rowHeight="2:1">
+          
+              <p>{{item.title}}  {{item.firstName}} {{item.lastName}}</p>
+              <img  src="{{item.picture}}" height="200px" width="200px">
+             
+              
+          </mat-grid-list>
+          
+    </mat-grid-tile>
+    <pagination-controls 
+          (pageChange)="p = $event" 
+          class="float-right">
+          </pagination-controls>
+    
+   
+  </mat-grid-list> -->
+  <div class="container" mt-10>
+    <div class = "row">
+      <div *ngFor = "let item of data | paginate: { itemsPerPage: 10, currentPage: p }" class = "col-md-3">
+        <div  class="card" style="width: 18rem;margin-top: 10px;">
+          <img src="{{ item.picture}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            
+            <a href="#" class="btn btn-primary" style="margin-right:8px ;">{{ item.title | titlecase}} {{ item.firstName | titlecase}} {{ item.lastName | titlecase}}</a>
+            <a href="#" class = "btn" style = "background-color: rgb(237, 34, 34);">
+              Delete
+            </a>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <pagination-controls style = "justify-content: center;"(pageChange)="p = $event">
+    </pagination-controls>
+    <br>
+    <br>
+  </div>
+  
+  

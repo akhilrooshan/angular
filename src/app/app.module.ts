@@ -6,17 +6,26 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
-import {MaterialModule} from "./material/material/material.module";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+
+
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
+
+import {UsersModule} from './users/users.module'
+import {NgxPaginationModule} from 'ngx-pagination';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
+    UsersModule,
     BrowserModule,
+    NgxPaginationModule,
     AppRoutingModule,
-    MaterialModule,
     HttpClientModule,
+    MatGridListModule,
+    MatCardModule,
     BrowserAnimationsModule,
   
   ],
