@@ -1,0 +1,28 @@
+<div class="container" mt-10>
+    <div class = "row">
+      <div *ngFor = "let item of data | paginate: { itemsPerPage: 5, currentPage: p }" class = "col-md-10 p-4 d-grid">
+        <div  class="card" style="width: 40rem;margin-top: 10px;">
+          <img src="{{ item.image}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            
+            <a href="#" class="btn btn-primary" style="margin-right:8px ;">{{ item.text | titlecase}}</a><br>
+            <div class = "btn my-3" style = "background-color: rgb(237, 34, 34);">
+              Likes {{item.likes}}
+            </div>
+            <div *ngFor="let arr of item.tags" class = "btn  my-3 mx-1" style = "background-color: rgb(0, 24, 243);">
+                  #{{arr}}
+            </div>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <pagination-controls style = "justify-content: center;"(pageChange)="p = $event">
+    </pagination-controls>
+    <br>
+    <br>
+  </div>
+  
+  

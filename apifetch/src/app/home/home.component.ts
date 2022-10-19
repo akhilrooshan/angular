@@ -1,12 +1,17 @@
+
 import { Component } from '@angular/core';
-import {UsersService} from "./users/users.service"
+import { UsersService } from '../users/users.service';
+
+
+
+
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class AppComponent {
+export class HomeComponent {
   title = 'api';
   p:any;
   data:any=[]
@@ -14,7 +19,7 @@ export class AppComponent {
   constructor(private userService:UsersService){
     
     this.userService.getData().subscribe((datan:any)=>{
-      console.log(datan);
+      console.log(datan)
       
       this.data = datan.data
       
