@@ -1,0 +1,200 @@
+<main id="main" class="main">
+   <div class="pagetitle">
+      <h1>Leave List</h1>
+
+
+   </div>
+
+   <!-- request leave -->
+   <section class="section">
+      <div class="row">
+
+
+         <div class="col-lg-6">
+            <div class="my-2">
+               <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#leaveModal"
+                  (click)="addLeave()"> Add leave </button>
+            </div>
+            <div class="card">
+               <div class="card-body">
+                  <h5 class="card-title">Pending leaves</h5>
+                  <table class="table table-striped">
+                     <thead>
+                        <tr>
+
+                     
+                           <th scope="col">Date</th>
+                           <th scope="col">Reason</th>
+
+
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr *ngFor="let items of leave;let i=index">
+
+
+                           <td *ngIf="checkname==items.name">{{items.leavedate}}</td>
+                           <td *ngIf="checkname==items.name">{{items.leavereason}}</td>
+                           <td *ngIf="checkname==items.name"> <button type="button" class="btn btn-success"
+                                 data-bs-toggle="modal" data-bs-target="#leaveModal" (click)="onEdit(items)"> Update
+                              </button></td>
+                           <td *ngIf="checkname==items.name"><button type="button" class="btn btn-danger"
+                                 data-bs-target="#leaveModal" (click)="onDelete(items.leaveId)"> Delete </button></td>
+
+                        </tr>
+
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+
+         </div>
+      </div>
+   </section>
+
+
+   <!-- end of request leave -->
+
+   <!-- confirmed leaves -->
+
+
+   <section class="section">
+      <div class="row">
+
+
+         <div class="col-lg-6">
+
+            <div class="card">
+               <div class="card-body">
+                  <h5 class="card-title">Confirmed leaves</h5>
+                  <table class="table table-striped">
+                     <thead>
+                        <tr>
+
+        
+                           <th scope="col">Date</th>
+                           <th scope="col">Reason</th>
+
+
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr *ngFor="let lock of confirm;let i=index">
+
+
+      
+
+                           <td *ngIf="checkname==lock.name">{{lock.leavedate}}</td>
+                           <td *ngIf="checkname==lock.name">{{lock.leavereason}}</td>
+
+                        </tr>
+
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+
+         </div>
+      </div>
+   </section>
+
+
+   <!-- end of confirmed leaves -->
+
+
+
+   <section class="section">
+      <div class="row">
+
+
+         <div class="col-lg-6">
+
+            <div class="card">
+               <div class="card-body">
+                  <h5 class="card-title">Upcoming Holidays</h5>
+                  <table class="table table-striped">
+                     <thead>
+                        <tr>
+
+                           <th scope="col">Date</th>
+                           <th scope="col">Reason</th>
+
+
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr *ngFor="let day of holiday;let i=index">
+
+
+
+
+                           <td>{{day.date}}</td>
+                           <td>{{day.Reason}}</td>
+
+                        </tr>
+
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+
+         </div>
+      </div>
+   </section>
+
+
+
+
+   <!-- modal for editing -->
+
+
+
+
+   <div class="modal fade" id="leaveModal" data-bs-backdrop="false">
+      <div class="modal-dialog">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title">Request for leave</h5>
+
+            </div>
+            <form #leaveForm="ngForm" (ngSubmit)="leaveForm.value">
+               <div class="modal-body">
+                  <div class="row">
+
+                     <div class="col-md-12"> <label for="inputDate" class="form-label">Date</label> <input type="date"
+                           class="form-control" name="inputDate" id="inputDate" [(ngModel)]="leaveArr.leavedate"
+                           #date='ngModel' required></div>
+
+                     <div class="col-md-12">
+
+                        <label for="inputReason" class="col-sm-2 col-form-label">Reason</label>
+                        <div class="col-md-12"><textarea class="form-control" style="height: 100px" name="inputReason"
+                              [(ngModel)]="leaveArr.leavereason" #reason="ngModel"></textarea></div>
+                     </div>
+
+                     <!-- <label for="inputReason" class="form-label">Reason</label> <input type="text" class="form-control" name="inputReason" [(ngModel)]="leaveArr.leavereason"></div> -->
+
+
+                  </div>
+
+               </div>
+
+               <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                     (click)="onCloseModel()">Close</button>
+
+                  <!-- only show submit button if data is filled -->
+
+                  <div *ngIf="leaveArr.leavereason && leaveArr.leavedate"> <button class="btn btn-primary"
+                        (click)="onSubmit(leaveForm)" data-bs-dismiss="modal" *ngIf="leaveArr.leaveId == 0">Save
+                        changes</button>
+                  </div>
+
+                  <button class="btn btn-primary" (click)="onUpdate()" data-bs-dismiss="modal"
+                     *ngIf="leaveArr.leaveId > 0">Update</button>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+
+</main>

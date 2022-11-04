@@ -1,0 +1,108 @@
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Users</h1>
+
+    </div>
+    <section class="section">
+        <div class="row">
+
+
+            <div class="col-lg-6">
+                <div class="my-2">
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#userModal"
+                        (click)="onCreateUser()"> Create </button>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Username</th>
+                                    <th scope="col">phone</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of user;let i= index">
+
+
+                                    <td>{{item.username}}</td>
+                                    <td>{{item.Email}}</td>
+                                    <td>{{item.phone}}</td>
+                                    <td> <button type="button" class="btn btn-success " data-bs-toggle="modal"
+                                            data-bs-target="#userModal" (click)="onEdit(item)"> Update </button></td>
+                                    <td><button type="button" class="btn btn-danger" (click)="onDelete(item.userId)">
+                                            Delete </button></td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- modal for editing -->
+
+
+
+
+    <div class="modal fade" id="userModal" data-bs-backdrop="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Create new user</h5>
+
+                </div>
+
+                <form #userForm="ngForm">
+                    <!-- modal body -->
+                    <div class="modal-body">
+
+                        <div class="row">
+                            <div class="col-md-12"> <label for="inputName" class="form-label">Name</label> <input
+                                    type="text" class="form-control" name="inputName" [(ngModel)]="usersArray.username">
+                            </div>
+                            <div class="col-md-6"> <label for="inputEmail" class="form-label">Email</label> <input
+                                    type="email" class="form-control" name="inputEmail" [(ngModel)]="usersArray.Email">
+                            </div>
+                            <div class="col-md-6"> <label for="inputphone" class="form-label">phone</label> <input
+                                    type="number" class="form-control" name="inputphone" [(ngModel)]="usersArray.phone" >
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                            (click)="onCloseModel()">Close</button>
+
+
+                        <div *ngIf="usersArray.username && usersArray.Email && usersArray.phone"><button
+                                class="btn btn-primary" (click)="saveData(userForm)" data-bs-dismiss="modal"
+                                *ngIf="usersArray.userId == 0">Save
+                                changes</button>
+                            </div>
+                            <button class="btn btn-primary" (click)="onUpdate()" data-bs-dismiss="modal"
+                                *ngIf="usersArray.userId > 0">Update</button>
+                       
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+</main>
