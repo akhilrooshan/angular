@@ -17,8 +17,8 @@ export class RoleGuard implements CanActivate {
       return true;
     }
     alert("You dont have admin rights")
-   
-    return false;
+    this.router.navigate(['login'])
+    return true;
   
   }
   

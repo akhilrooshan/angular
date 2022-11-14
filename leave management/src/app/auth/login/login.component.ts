@@ -10,8 +10,27 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup;
-  constructor(private fb: FormBuilder, private router: Router) {
 
+  profile:any[]=[];
+  profileArr:any={
+    id:0,
+    fullName:'',
+    about:'',
+    job:'',
+    phone:0,
+    username:''
+
+
+  }
+  constructor(private fb: FormBuilder, private router: Router) {
+    const localData=localStorage.getItem('profileList');
+    if(localData!=null)
+    {
+      this.profile=JSON.parse(localData);
+
+
+      
+    }
   }
 
   ngOnInit(): void {
@@ -25,6 +44,8 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     if (this.loginForm.valid) {
       if (this.loginForm.value.username === "employee@gmail.com" && this.loginForm.value.password == "1234") {
+
+
         localStorage.setItem('token', "dtdydghjhjgyryttargdhfgnjmgfgfdsassfggnhgyfd");
         localStorage.setItem('name', "akhil");
 
@@ -32,6 +53,17 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['leaveList'])
 
       } else if (this.loginForm.value.username === "admin@gmail.com" && this.loginForm.value.password == "aaaa") {
+       
+        this.profileArr.id=2
+        this.profileArr.fullName='Ashwini ys'
+       this.profileArr.about="enthuasiasist"
+       this.profileArr.job="front end dev"
+       this.profileArr.phone=9999977786
+       this.profileArr.username='admin@gmail.com'
+       this.profile.push(this.profileArr)
+       localStorage.setItem('profileList',JSON.stringify(this.profile))
+       
+        
         localStorage.setItem('token', "dtdydghjhjgyryttargdhfgnjmgfgfdsassfggnhgyfd");
         localStorage.setItem('name', "ashwini");
         localStorage.setItem('userType', 'admin')

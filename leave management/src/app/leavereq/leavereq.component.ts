@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeavereqComponent implements OnInit {
   name=localStorage.getItem('name')
+
+  cdel:any=[];
+  cupd:any=[]
   constructor() { }
 
   ngOnInit(): void {
@@ -38,29 +41,11 @@ export class LeavereqComponent implements OnInit {
 
 
   leave:any[]=[]
-  addLeave() {
-    const notNull = document.getElementById('leaveModal ');
-    if (notNull != null) {
-      notNull.style.display = ' block';
-    }
-  }
-  onCloseModel() {
-    const notNull = document.getElementById('leaveModal ' );
-    if (notNull != null) {
-    notNull.style.display = ' none' ;
-    }
-    this.leaveArr={
-      leaveId:0,
-      username:'',
-      leavedate:'',
-      leavereason:''
-    }
-     window.location.reload()
-    }
 
 
-  onApprove()
+  onApprove(data:any)
   {
+    this.leaveArr=data;
     const record=this.leave.find(x=>x.leaveId==this.leaveArr.leaveId);
     record.leavedate=this.leaveArr.leavedate;
     record.leavereason=this.leaveArr.leavereason;
@@ -87,11 +72,21 @@ export class LeavereqComponent implements OnInit {
 
 
   }
-  onEdit(data:any)
+  onUpd(id:any)
   {
     
-    this.addLeave();
-    this.leaveArr=data;
+    this.cupd[id]=true;
+    
+  }
+
+  onDel(id:any){
+    this.cdel[id]=true;
+
+  }
+
+  onCancel(id:any){
+    this.cdel[id]=false;
+    this.cupd[id]=false;
   }
  
 }

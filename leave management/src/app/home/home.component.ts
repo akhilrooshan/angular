@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ServicesService } from '../service/services.service';
 
 @Component({
   selector: 'app-home',
@@ -6,8 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+ cdel:any=[];
 
-  constructor() { }
+ 
+ //confrim delete variable
+ usersArray=this.service.usersArray
+ user=this.service.user
+
+
+ 
+  constructor(private service:ServicesService,private router:Router) { 
+
+   
+  }
 
   ngOnInit(): void {
     const localData=localStorage.getItem('userList');
@@ -15,75 +28,42 @@ export class HomeComponent implements OnInit {
     {
       this.user=JSON.parse(localData);
     }
+
+    const localUser=localStorage.getItem('edit');
+    if(localUser!=null)
+    {
+      localStorage.removeItem('edit')
+    }
   }
   
-  user:any[]=[];
-  usersArray:any={
-    userId:0,
-  username:'',
-    Email:'',
-    phone:'',
-  }
+  
+createUser()
+{
+  this.router.navigate(['createUser'])
+  
+}
 
-  onCreateUser() {
-    
-    const notNull = document.getElementById('userModal ' );
-    if (notNull != null) {
-    notNull.style.display = ' block' ;
-    }
-    }
+onEdit(item:any)
+{
+  
+ 
+  localStorage.setItem("edit",JSON.stringify(item))
+  this.router.navigate(['/editUser'])
+
+}
 
 
-
-    onCloseModel() {
-    const notNull = document.getElementById('userModal ' );
-    if (notNull != null) {
-    notNull.style.display = ' none' ;
-    }
-    this.usersArray={
-      userId:0,
-      username:'',
-    Email:'',
-    phone:'',
-     }
-     window.location.reload()
-    }
-  saveData(data:any)
-  {
-
-    this.usersArray.userId=this.user.length+1;
-     this.user.push(this.usersArray)
-     this.onCloseModel();
-     localStorage.setItem('userList',JSON.stringify(this.user))
-     this.usersArray={
-      userId:0,
-      username:'',
-    Email:'',
-    phone:'',
-     }
-  }
-
-  onEdit(data:any)
-  {
-    
-    this.onCreateUser();
-    this.usersArray=data;
-  }
-  onUpdate()
-  {
-    const record=this.user.find(x=>x.userId==this.usersArray.userId);
-    record.username=this.usersArray.username;
-    record.Email=this.usersArray.Email;
-    record.phone=this.usersArray.phone;
-    localStorage.setItem('userList',JSON.stringify(this.user))
-
-    this.onCloseModel;
-    window.location.reload()
+  onDel(id:any){
+    this.cdel[id]=true;
 
   }
 
+  onCancel(id:any){
+    this.cdel[id]=false;
+  }
   onDelete(id:any)
   {
+    console.log("From delete")
     for(let i=0;i<this.user.length;i++)
     {
       if(this.user[i].userId==id)
@@ -92,9 +72,13 @@ export class HomeComponent implements OnInit {
       }
     }
     localStorage.setItem('userList',JSON.stringify(this.user))
-
+    this.cdel=false
+    window.location.reload()
   }
 
+
+  
+ 
 }
 
 

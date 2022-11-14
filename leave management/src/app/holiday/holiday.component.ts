@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-holiday',
@@ -7,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HolidayComponent implements OnInit {
 
-  constructor() { }
+
+  holiday: any[] = [];
+  holidayArr: any = {
+    holidayId: 0,
+    date: '',
+}
+
+cdel:any=[];
+
+
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
     const localData=localStorage.getItem('holidayList');
@@ -15,71 +26,40 @@ export class HolidayComponent implements OnInit {
     {
       this.holiday=JSON.parse(localData);
     }
+
+    const localUser=localStorage.getItem('edit');
+    if(localUser!=null)
+    {
+      localStorage.removeItem('edit')
+    }
   }
-  holiday: any[] = [];
-  holidayArr: any = {
-    holidayId: 0,
-    date: '',
 
 
-
+  onDel(id:any){
+    this.cdel[id]=true;
 
   }
+
+  onCancel(id:any){
+    this.cdel[id]=false;
+  }
+
 
 
   addHoliday() {
-    const notNull = document.getElementById('holidayModal ');
-    if (notNull != null) {
-      notNull.style.display = ' block';
-    }
+    this.router.navigate(['/createHoliday'])
+
   }
 
 
 
-  onCloseModel() {
-    const notNull = document.getElementById('holidayModal ' );
-    if (notNull != null) {
-    notNull.style.display = ' none' ;
-    }
-    this.holidayArr={
-      holidayId:0,
-      date:'',
-    reason:'',
- 
-     }
-     window.location.reload()
-    }
-  onSubmit(data:any)
-  {
-
-    this.holidayArr.holidayId=this.holiday.length+1;
-     this.holiday.push(this.holidayArr)
-     this.onCloseModel();
-     localStorage.setItem('holidayList',JSON.stringify(this.holiday))
-     this.holidayArr={
-      holidayId:0,
-      date:'',
-    reason:'',
-   
-     }
-  }
 
   onEdit(data:any)
   {
     
-    this.addHoliday();
-    this.holidayArr=data;
-  }
-  onUpdate()
-  {
-    const record=this.holiday.find(x=>x.holidayId==this.holidayArr.holidayId);
-    record.date=this.holidayArr.date;
-    record.reason=this.holidayArr.reason;
- 
-    localStorage.setItem('holidayList',JSON.stringify(this.holiday))
-
-    this.onCloseModel;
-
+    localStorage.setItem("edit",JSON.stringify(data))
+    this.router.navigate(['/editHoliday'])
+  
   }
 
   onDelete(id:any)

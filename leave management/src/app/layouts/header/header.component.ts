@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common'
 import { Token } from '@angular/compiler';
 import { Router } from '@angular/router';
+import { ServicesService } from 'src/app/service/services.service';
 
 @Component({
   selector: 'app-header',
@@ -10,10 +11,19 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-
+  data:any=[];
   name=localStorage.getItem("name")
   user=localStorage.getItem("userType")
-  constructor(@Inject(DOCUMENT) private document: Document,private router:Router) { }
+  constructor(@Inject(DOCUMENT) private document: Document,private router:Router,private userService:ServicesService) {
+
+    this.userService.getData().subscribe((datan: any) => {
+      console.log(datan)
+      
+  
+      this.data = datan.data
+
+    })
+   }
 
   ngOnInit(): void {
   }
@@ -34,5 +44,6 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(["login"])
 
   }
+ 
   
 }

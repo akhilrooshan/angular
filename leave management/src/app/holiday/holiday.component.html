@@ -24,7 +24,7 @@
                   <table class="table table-striped">
                      <thead>
                         <tr>
-                         
+
                            <th scope="col">Date</th>
                            <th scope="col">Reason</th>
 
@@ -34,18 +34,25 @@
                      <tbody>
                         <tr *ngFor="let items of holiday;let i=index">
 
-                        
+
                            <td>{{items.date}}</td>
                            <td>{{items.Reason}}</td>
 
                            <!-- editing button -->
 
-                           <td> <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                           <td *ngIf="!cdel[i]"> <button type="button" class="btn btn-success" data-bs-toggle="modal"
                                  data-bs-target="#holidayModal" (click)="onEdit(items)"> Update </button></td>
 
-                              <!-- delete button -->
-                           <td><button type="button" class="btn btn-danger" data-bs-target="#holidayModal"
-                                 (click)="onDelete(items.holidayId)"> Delete </button></td>
+                           <!-- delete button -->
+                           <td *ngIf="!cdel[i]"><button type="button" class="btn btn-danger" data-bs-target="#holidayModal"
+                                 (click)="onDel(i)"> Delete </button></td>
+
+                           <td *ngIf="cdel[i]"><button type="button" class="btn btn-danger" data-bs-target="#holidayModal"
+                                 (click)="onDelete(items.holidayId)">Confirm Delete </button></td>
+
+                           <td *ngIf="cdel[i]"><button type="button" class="btn btn-secondary" data-bs-target="#holidayModal"
+                                 (click)="onCancel(i)"> Cancel </button></td>
+
                         </tr>
 
                      </tbody>
@@ -62,49 +69,5 @@
 
 
 
-   <!-- modal for editing -->
-
-
-
-
-   <div class="modal fade" id="holidayModal" data-bs-backdrop="false">
-      <div class="modal-dialog">
-         <div class="modal-content">
-            <div class="modal-header">
-               <h5 class="modal-title">Disabled Backdrop</h5>
-
-            </div>
-            <form #holidayForm="ngForm">
-               <div class="modal-body">
-                  <div class="row">
-                     <div class="col-md-12"> <label for="inputName" class="form-label">Date</label> <input type="date"
-                           class="form-control" name="inputName" [(ngModel)]="holidayArr.date" required=""></div>
-                 
-                         <label for="inputReason" class="col-sm-2 col-form-label">Reason</label>
-                         <div class="col-md-12"><textarea class="form-control" style="height: 100px" name="inputReason"
-                               [(ngModel)]="holidayArr.Reason" #reason="ngModel"></textarea></div>
-                      </div>
- 
-
-
-
-               
-
-               </div>
-
-               <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
-                     (click)="onCloseModel()">Close</button>
-                 
-                     <div *ngIf="holidayArr.date && holidayArr.Reason "> <button class="btn btn-primary" (click)="onSubmit(holidayForm)" data-bs-dismiss="modal"
-                     *ngIf="holidayArr.holidayId == 0">Save
-                     changes</button>
-                     </div>
-                  <button class="btn btn-primary" (click)="onUpdate()" data-bs-dismiss="modal"
-                     *ngIf="holidayArr.holidayId > 0">Update</button>
-               </div>
-            </form>
-         </div>
-      </div>
-   </div>
 
 </main>

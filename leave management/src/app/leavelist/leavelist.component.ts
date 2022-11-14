@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { isEmpty } from 'rxjs';
 
 @Component({
@@ -8,7 +9,7 @@ import { isEmpty } from 'rxjs';
   styleUrls: ['./leavelist.component.css']
 })
 export class LeavelistComponent implements OnInit {
-
+  cdel:any=[]  //confirm delete boolean variable
   checkname=localStorage.getItem('name')
   confirm:any[]=[]
 
@@ -24,7 +25,7 @@ export class LeavelistComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor(private router :Router) { }
 
   ngOnInit(): void {
     const localData=localStorage.getItem('leaveReq');
@@ -50,59 +51,31 @@ export class LeavelistComponent implements OnInit {
   }
 
 
+
+  onDel(id:any){
+    this.cdel[id]=true;
+
+  }
+
+  onCancel(id:any){
+    this.cdel[id]=false;
+  }
+
+
+
   addLeave() {
-    const notNull = document.getElementById('leaveModal ');
-    if (notNull != null) {
-      notNull.style.display = ' block';
-    }
+    this.router.navigate(['/createLeave'])
+
   }
 
 
-  onCloseModel() {
-    const notNull = document.getElementById('leaveModal ' );
-    if (notNull != null) {
-    notNull.style.display = ' none' ;
-    }
-    this.leaveArr={
-      leaveId:0,
 
-      leavedate:'',
-      leavereason:''
-    }
-     window.location.reload()
-    }
-  onSubmit(data:any)
-  {
-    
-    this.leaveArr.leaveId=this.leave.length+1;
-    this.leaveArr.name=localStorage.getItem('name')
-     this.leave.push(this.leaveArr)
-     this.onCloseModel();
-     localStorage.setItem('leaveReq',JSON.stringify(this.leave))
-     this.leaveArr={
-      leaveId:0,
-      leavedate:'',
-      leavereason:''
-    }
-  
-  }
 
   onEdit(data:any)
   {
     
-    this.addLeave();
-    this.leaveArr=data;
-  }
-  onUpdate()
-  {
-    const record=this.leave.find(x=>x.leaveId==this.leaveArr.leaveId);
-    record.date=this.leaveArr.date;
-    record.reason=this.leaveArr.reason;
- 
-    localStorage.setItem('leaveReq',JSON.stringify(this.leave))
-
-    this.onCloseModel();
-
+    localStorage.setItem("edit",JSON.stringify(data))
+    this.router.navigate(['/editLeave'])
   }
 
   onDelete(id:any)

@@ -28,16 +28,29 @@
                      </thead>
                      <tbody>
                         <tr *ngFor="let items of leave;let i=index">
-                        
-                              <td>{{i+1}}</td>
-                              <td>{{items.name}}</td>
-                              <td>{{items.leavedate}}</td>
-                              <td>{{items.leavereason}}</td>
-                              <td> <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                                    data-bs-target="#leaveModal" (click)="onEdit(items)"> Approve </button></td>
-                              <td><button type="button" class="btn btn-danger" data-bs-target="#leaveModal"
-                                    (click)="onDelete(items.leaveId)"> Delete </button></td>
-                        
+
+                           <td>{{i+1}}</td>
+                           <td>{{items.name}}</td>
+                           <td>{{items.leavedate}}</td>
+                           <td>{{items.leavereason}}</td>
+                           <td *ngIf="!cdel[i] && !cupd[i]"> <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                 data-bs-target="#leaveModal" (click)="onUpd(i)"> Approve </button></td>
+
+                           <td *ngIf="!cdel[i] && cupd[i]"> <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                 data-bs-target="#leaveModal" (click)="onApprove(items)">Confirm Approve </button></td>
+                           <td *ngIf="!cdel[i] && !cupd[i]"><button type="button" class="btn btn-danger"
+                                 data-bs-target="#leaveModal" (click)="onDel(i)"> Delete </button></td>
+
+                           <td *ngIf="cdel[i]"><button type="button" class="btn btn-danger"
+                                 (click)="onDelete(items.leaveId)">
+                                 Confirm Delete </button>
+
+                           </td>
+
+                           <td *ngIf="cdel[i] || cupd[i]"> <button type="button" class="btn btn-secondary" (click)="onCancel(i)">
+                                 Cancel </button>
+                           </td>
+
                         </tr>
 
                      </tbody>
@@ -50,40 +63,5 @@
    </section>
 
 
-   <div class="modal fade" id="leaveModal" data-bs-backdrop="false">
-      <div class="modal-dialog">
-         <div class="modal-content">
-            <div class="modal-header">
-               <h5 class="modal-title">Approve leave</h5>
-
-            </div>
-            <form #leaveForm="ngForm">
-               <div class="modal-body">
-                  <div class="row">
-                     <div class="col-md-6"> <label for="inputName" class="form-label">Name</label> <input type="text"
-                           class="form-control" name="inputName" [(ngModel)]="leaveArr.name" readonly></div>
-
-                     <div class="col-md-12"> <label for="inputDate" class="form-label">Date</label> <input type="date"
-                           class="form-control" name="inputDate" [(ngModel)]="leaveArr.leavedate" required="" readonly>
-                     </div>
-                     <div class="col-md-6"> <label for="inputReason" class="form-label">Reason</label> <input
-                           type="text" class="form-control" name="inputReason" [(ngModel)]="leaveArr.leavereason"
-                           readonly></div>
-
-
-                  </div>
-
-               </div>
-
-               <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
-                     (click)="onCloseModel()">Close</button>
-                  <button class="btn btn-primary" (click)="onApprove()" data-bs-dismiss="modal"
-                     *ngIf="leaveArr.leaveId > 0">Confirm Approve</button>
-               </div>
-            </form>
-         </div>
-      </div>
-   </div>
-
+ 
 </main>

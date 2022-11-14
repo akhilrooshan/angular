@@ -14,6 +14,10 @@ import { HolidayComponent } from './holiday/holiday.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LeavelistComponent } from './leavelist/leavelist.component';
 import { LeavereqComponent } from './leavereq/leavereq.component';
+import { ProfileComponent } from './profile/profile.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PopupComponent } from './popup/popup.component';
+
 
 @NgModule({
   declarations: [
@@ -29,13 +33,17 @@ import { LeavereqComponent } from './leavereq/leavereq.component';
     HolidayComponent,
     LeavelistComponent,
     LeavereqComponent,
+    ProfileComponent,
+    PopupComponent,
+
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
