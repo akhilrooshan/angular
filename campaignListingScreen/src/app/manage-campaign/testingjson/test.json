@@ -1,0 +1,89 @@
+[
+    {
+        "name": "Demographic",
+        "child": [
+            {
+                "name": "Demographic category1",
+                "child": [
+                    "< 20",
+                    "20-29",
+                    "30-39"
+                ]
+            },
+            {
+                "name": "Demographic category2",
+                "child": [
+                    "< 20",
+                    "20-29",
+                    "30-39"
+                ]
+            },
+            {
+                "name": "Demographic category3",
+                "child": [
+                    "< 20",
+                    "20-29",
+                    "30-39"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Geographic",
+        "child": [
+            {
+                "name": "Geographic category1",
+                "child": [
+                    "< 20",
+                    "20-29",
+                    "30-39"
+                ]
+            },
+            {
+                "name": "Geographic CATEGORY2",
+                "child": [
+                    "< 20",
+                    "20-29",
+                    "30-39"
+                ]
+            },
+            {
+                "name": "Geographic category3",
+                "child": [
+                    "< 20",
+                    "20-29",
+                    "30-39"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "commercial",
+        "child": [
+            {
+                "name": "Demographic category1",
+                "child": [
+                    "< 20",
+                    "20-29",
+                    "30-39"
+                ]
+            },
+            {
+                "name": "Demographic category2",
+                "child": [
+                    "< 20",
+                    "20-29",
+                    "30-39"
+                ]
+            },
+            {
+                "name": "Demographic category3",
+                "child": [
+                    "< 20",
+                    "20-29",
+                    "30-39"
+                ]
+            }
+        ]
+    }
+]
