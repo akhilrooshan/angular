@@ -1,0 +1,57 @@
+{
+    "Age": [
+        {
+            "age": "< 20"
+        },
+        {
+            "age": "20-29"
+        },
+        {
+            "age": "30-39"
+        },
+        {
+            "age": "40-49"
+        },
+        {
+            "age": "50-59"
+        },
+        {
+            "age": ">=60"
+        }
+    ],
+    "Audience": [
+        {
+            "headings": "Demographic",
+            "categories": "Age"
+        },
+        {
+            "headings": "Geographic",
+            "categories": "Gender"
+        },
+        {
+            "headings": "Commercial",
+            "categories": "360 labels"
+        },
+        {
+            "headings": "",
+            "categories": "Handsets"
+        }
+    ],
+    "Gender": [
+        {
+            "gender": "male"
+        },
+        {
+            "gender": "Female"
+        },
+        {
+            "gender": "Transmale"
+        },
+        {
+            "gender": "TraneFemale"
+        },
+        {
+            "gender": "Other"
+        }
+    ]
+}

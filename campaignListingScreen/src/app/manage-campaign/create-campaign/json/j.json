@@ -1,0 +1,551 @@
+[
+    {
+        "name": "Demographic",
+        "child": [
+            {
+                "name": "Demographic category1",
+                "age": [
+                    {
+                        "id": 0,
+                        "value": "< 20",
+                        "status": false
+                    },
+                    {
+                        "id": 1,
+                        "value": "20-29",
+                        "status": false
+                    },
+                    {
+                        "id": 2,
+                        "value": "30-39",
+                        "status": false
+                    },
+                    {
+                        "id": 3,
+                        "value": "40-49",
+                        "status": false
+                    },
+                    {
+                        "id": 4,
+                        "value": "50-59",
+                        "status": false
+                    },
+                    {
+                        "id": 5,
+                        "value": ">=60",
+                        "status": false
+                    }
+                ],
+                "Gender": [
+                    {
+                        "id": 0,
+                        "value": "male",
+                        "status": false
+                    },
+                    {
+                        "id": 1,
+                        "value": "Female",
+                        "status": false
+                    },
+                    {
+                        "id": 2,
+                        "value": "Transmale",
+                        "status": false
+                    },
+                    {
+                        "id": 3,
+                        "value": "TraneFemale",
+                        "status": false
+                    },
+                    {
+                        "id": 4,
+                        "value": "Other",
+                        "status": false
+                    }
+                ]
+            },
+            {
+                "name": "Demographic category2",
+                "age": [
+                    {
+                        "id": 0,
+                        "value": "< 20",
+                        "status": false
+                    },
+                    {
+                        "id": 1,
+                        "value": "20-29",
+                        "status": false
+                    },
+                    {
+                        "id": 2,
+                        "value": "30-39",
+                        "status": false
+                    },
+                    {
+                        "id": 3,
+                        "value": "40-49",
+                        "status": false
+                    },
+                    {
+                        "id": 4,
+                        "value": "50-59",
+                        "status": false
+                    },
+                    {
+                        "id": 5,
+                        "value": ">=60",
+                        "status": false
+                    }
+                ],
+                "Gender": [
+                    {
+                        "id": 0,
+                        "value": "male",
+                        "status": false
+                    },
+                    {
+                        "id": 1,
+                        "value": "Female",
+                        "status": false
+                    },
+                    {
+                        "id": 2,
+                        "value": "Transmale",
+                        "status": false
+                    },
+                    {
+                        "id": 3,
+                        "value": "TraneFemale",
+                        "status": false
+                    },
+                    {
+                        "id": 4,
+                        "value": "Other",
+                        "status": false
+                    }
+                ]
+            },
+            {
+                "name": "Demographic category3",
+                "age": [
+                    {
+                        "id": 0,
+                        "value": "< 20",
+                        "status": false
+                    },
+                    {
+                        "id": 1,
+                        "value": "20-29",
+                        "status": false
+                    },
+                    {
+                        "id": 2,
+                        "value": "30-39",
+                        "status": false
+                    },
+                    {
+                        "id": 3,
+                        "value": "40-49",
+                        "status": false
+                    },
+                    {
+                        "id": 4,
+                        "value": "50-59",
+                        "status": false
+                    },
+                    {
+                        "id": 5,
+                        "value": ">=60",
+                        "status": false
+                    }
+                ],
+                "Gender": [
+                    {
+                        "id": 0,
+                        "value": "male",
+                        "status": false
+                    },
+                    {
+                        "id": 1,
+                        "value": "Female",
+                        "status": false
+                    },
+                    {
+                        "id": 2,
+                        "value": "Transmale",
+                        "status": false
+                    },
+                    {
+                        "id": 3,
+                        "value": "TraneFemale",
+                        "status": false
+                    },
+                    {
+                        "id": 4,
+                        "value": "Other",
+                        "status": false
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Geographic",
+        "child": [
+            {
+                "name": "Geographic category1",
+                "age": [
+                    {
+                        "id": 0,
+                        "value": "< 20",
+                        "status": false
+                    },
+                    {
+                        "id": 1,
+                        "value": "20-29",
+                        "status": false
+                    },
+                    {
+                        "id": 2,
+                        "value": "30-39",
+                        "status": false
+                    },
+                    {
+                        "id": 3,
+                        "value": "40-49",
+                        "status": false
+                    },
+                    {
+                        "id": 4,
+                        "value": "50-59",
+                        "status": false
+                    },
+                    {
+                        "id": 5,
+                        "value": ">=60",
+                        "status": false
+                    }
+                ],
+                "Gender": [
+                    {
+                        "id": 0,
+                        "value": "male",
+                        "status": false
+                    },
+                    {
+                        "id": 1,
+                        "value": "Female",
+                        "status": false
+                    },
+                    {
+                        "id": 2,
+                        "value": "Transmale",
+                        "status": false
+                    },
+                    {
+                        "id": 3,
+                        "value": "TraneFemale",
+                        "status": false
+                    },
+                    {
+                        "id": 4,
+                        "value": "Other",
+                        "status": false
+                    }
+                ]
+            },
+            {
+                "name": "Geographic CATEGORY2",
+                "age": [
+                    {
+                        "id": 0,
+                        "value": "< 20",
+                        "status": false
+                    },
+                    {
+                        "id": 1,
+                        "value": "20-29",
+                        "status": false
+                    },
+                    {
+                        "id": 2,
+                        "value": "30-39",
+                        "status": false
+                    },
+                    {
+                        "id": 3,
+                        "value": "40-49",
+                        "status": false
+                    },
+                    {
+                        "id": 4,
+                        "value": "50-59",
+                        "status": false
+                    },
+                    {
+                        "id": 5,
+                        "value": ">=60",
+                        "status": false
+                    }
+                ],
+                "Gender": [
+                    {
+                        "id": 0,
+                        "value": "male",
+                        "status": false
+                    },
+                    {
+                        "id": 1,
+                        "value": "Female",
+                        "status": false
+                    },
+                    {
+                        "id": 2,
+                        "value": "Transmale",
+                        "status": false
+                    },
+                    {
+                        "id": 3,
+                        "value": "TraneFemale",
+                        "status": false
+                    },
+                    {
+                        "id": 4,
+                        "value": "Other",
+                        "status": false
+                    }
+                ]
+            },
+            {
+                "name": "Geographic category3",
+                "age": [
+                    {
+                        "id": 0,
+                        "value": "< 20",
+                        "status": false
+                    },
+                    {
+                        "id": 1,
+                        "value": "20-29",
+                        "status": false
+                    },
+                    {
+                        "id": 2,
+                        "value": "30-39",
+                        "status": false
+                    },
+                    {
+                        "id": 3,
+                        "value": "40-49",
+                        "status": false
+                    },
+                    {
+                        "id": 4,
+                        "value": "50-59",
+                        "status": false
+                    },
+                    {
+                        "id": 5,
+                        "value": ">=60",
+                        "status": false
+                    }
+                ],
+                "Gender": [
+                    {
+                        "id": 0,
+                        "value": "male",
+                        "status": false
+                    },
+                    {
+                        "id": 1,
+                        "value": "Female",
+                        "status": false
+                    },
+                    {
+                        "id": 2,
+                        "value": "Transmale",
+                        "status": false
+                    },
+                    {
+                        "id": 3,
+                        "value": "TraneFemale",
+                        "status": false
+                    },
+                    {
+                        "id": 4,
+                        "value": "Other",
+                        "status": false
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "360 labels",
+        "child": [
+            {
+                "name": "360 labels category1",
+                "age": [
+                    {
+                        "id": 0,
+                        "value": "< 20",
+                        "status": false
+                    },
+                    {
+                        "id": 1,
+                        "value": "20-29",
+                        "status": false
+                    },
+                    {
+                        "id": 2,
+                        "value": "30-39",
+                        "status": false
+                    },
+                    {
+                        "id": 3,
+                        "value": "40-49",
+                        "status": false
+                    },
+                    {
+                        "id": 4,
+                        "value": "50-59",
+                        "status": false
+                    },
+                    {
+                        "id": 5,
+                        "value": ">=60",
+                        "status": false
+                    }
+                ],
+                "Gender": [
+                    {
+                        "id": 0,
+                        "value": "male",
+                        "status": false
+                    },
+                    {
+                        "id": 1,
+                        "value": "Female",
+                        "status": false
+                    },
+                    {
+                        "id": 2,
+                        "value": "Transmale",
+                        "status": false
+                    },
+                    {
+                        "id": 3,
+                        "value": "TraneFemale",
+                        "status": false
+                    },
+                    {
+                        "id": 4,
+                        "value": "Other",
+                        "status": false
+                    }
+                ]
+            },
+            {
+                "name": "360 labels category2",
+                "age": [
+                    {
+                        "id": 0,
+                        "value": "< 20",
+                        "status": false
+                    },
+                    {
+                        "id": 1,
+                        "value": "20-29",
+                        "status": false
+                    },
+                    {
+                        "id": 2,
+                        "value": "30-39",
+                        "status": false
+                    },
+                    {
+                        "id": 3,
+                        "value": "40-49",
+                        "status": false
+                    },
+                    {
+                        "id": 4,
+                        "value": "50-59",
+                        "status": false
+                    },
+                    {
+                        "id": 5,
+                        "value": ">=60",
+                        "status": false
+                    }
+                ],
+                "Gender": [
+                    {
+                        "id": 0,
+                        "value": "male",
+                        "status": false
+                    },
+                    {
+                        "id": 1,
+                        "value": "Female",
+                        "status": false
+                    },
+                    {
+                        "id": 2,
+                        "value": "Transmale",
+                        "status": false
+                    },
+                    {
+                        "id": 3,
+                        "value": "TraneFemale",
+                        "status": false
+                    },
+                    {
+                        "id": 4,
+                        "value": "Other",
+                        "status": false
+                    }
+                ]
+            },
+            {
+                "name": "360 labels category3",
+                "age": [
+                    "< 20",
+                    "20-29",
+                    "30-39",
+                    "40-49",
+                    "50-59",
+                    ">=60"
+                ],
+                "Gender": [
+                    {
+                        "id": 0,
+                        "value": "male",
+                        "status": false
+                    },
+                    {
+                        "id": 1,
+                        "value": "Female",
+                        "status": false
+                    },
+                    {
+                        "id": 2,
+                        "value": "Transmale",
+                        "status": false
+                    },
+                    {
+                        "id": 3,
+                        "value": "TraneFemale",
+                        "status": false
+                    },
+                    {
+                        "id": 4,
+                        "value": "Other",
+                        "status": false
+                    }
+                ]
+            }
+        ]
+    }
+]

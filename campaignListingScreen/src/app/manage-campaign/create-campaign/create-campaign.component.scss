@@ -1,0 +1,187 @@
+.campaign-wrapper {
+  margin-left: 5rem;
+  margin-top: 2rem;
+  .title {
+    font-size: 2rem;
+  }
+  .white {
+    background-color: white;
+    border-style: ridge;
+    height: 3rem;
+    margin-top: 0.5rem;
+    margin-left: 7rem;
+    border-radius: 5px 5px 5px 5px;
+    .Heading {
+      font-size: medium;
+    }
+  }
+  .stepIcon {
+    font-family: "material icon";
+  }
+  .backBtn {
+    background-color: var(--greyish-white);
+  }
+  .scorllAdjust {
+    width: 32rem;
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: var(--scroll-bar);
+      border-radius: 10px;
+    }
+    overflow-y: scroll;
+    height: 26rem;
+  }
+  .bg {
+    --bs-bg-opacity: 0.5;
+    border-radius: 20px 20px 20px 20px;
+  }
+  .locationTable {
+    border-spacing: 0px 5px;
+    border-collapse: separate;
+    .colWidthTable {
+      width: 45rem;
+      background-color: var(--light-grey);
+      position: relative;
+      background-clip: content-box;
+      .TableValueAlign {
+        position: absolute;
+        left: 1rem;
+        top: 0;
+      }
+      .edit-btn {
+        position: absolute;
+        top: 11px !important;
+        right: 16px !important;
+        z-index: 2;
+        color: var(--scroll-bar);
+      }
+      .save-btn {
+        position: absolute;
+        top: 0;
+        right: 18px;
+        z-index: 2;
+      }
+    }
+    .editWidthTable {
+      background-color: var(--light-grey);
+    }
+    input:focus {
+      border: 3px solid rgb(0, 21, 255);
+    }
+  }
+  tr {
+    line-height: 3rem;
+  }
+  .mat-stepper-horizontal {
+    margin-top: 8px;
+    background-color: transparent;
+  }
+  .mat-mdc-form-field {
+    margin-top: 16px;
+  }
+  .collapseTitle {
+    font-weight: 700;
+    .info {
+      color: rgba(161, 161, 161, 0.626);
+      margin-left: 1rem;
+      margin-top: 0.1rem;
+    }
+  }
+  .align-arrow-right {
+    position: absolute;
+    margin-top: 0.5rem;
+    right: 0;
+    top: 0;
+  }
+  .bin {
+    color: var(--scroll-bar);
+    background-color: var();
+  }
+  .selectradius {
+    font-weight: bold;
+    padding-left: 1rem;
+    color: var(--mid-grey-text);
+  }
+  .mat-option {
+    height: 19rem !important;
+  }
+  .row-width {
+    height: 10rem;
+  }
+  .audienceTable {
+    padding: 0;
+    position: absolute;
+    top: 23rem;
+    left: 15rem;
+    z-index: 5;
+    background-color: white;
+    height: 30rem;
+    .tablecolWidth {
+      height: 6rem;
+      color: var(--tabletextcolor);
+      border-right: 00.1rem solid var(--greyish-white);
+      .div {
+        padding: 3rem;
+        font-size: medium;
+        font-weight: 700;
+      }
+    }
+    .tablehover {
+      color: black;
+    }
+    .tablehover:hover {
+      background-color: var(--light-blue);
+    }
+    .selectedRow {
+      background-color: var(--light-blue);
+      border-right: 0em;
+    }
+    .scrollHide {
+      overflow-y: scroll;
+      height: 20rem;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+  .browseBtn {
+    height: 3.6rem;
+    z-index: 3;
+    top: -3px;
+    width: 9rem;
+  }
+  .audienceSearch {
+    position: relative;
+    left: 17px;
+  }
+  .space {
+    height: 17rem;
+  }
+  .ageCol {
+    height: 3rem;
+    padding: 1rem;
+    padding-left: 2rem;
+    .ageText {
+      padding-top: 0.2rem;
+      font-weight: 700;
+    }
+  }
+  .headingline {
+    border-bottom: 00.1rem solid var(--greyish-white);
+  }
+  .pabs {
+    position: absolute;
+  }
+  .checkMat {
+    display: inline-block;
+    height: 16px;
+    line-height: 0;
+    order: 0;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 16px;
+    flex-shrink: 0;
+  }
+}

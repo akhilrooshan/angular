@@ -1,0 +1,60 @@
+<section class="dashboard-wrapper">
+    <h1 class="fw-bold d-none d-lg-block heading">Manage Campaigns</h1>
+    <h4 class="d-none d-lg-block text-secondary subheading">Manage Campaigns</h4>
+    <div class="card cardMain">
+        <a (click)="newcampaign()" class="btn btn-primary text-light createCampaignBtn">Create Campaign</a>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col" >Program ID</th>
+                        <th scope="col">Campaign Name</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">CTR</th>
+                        <th scope="col">Start Date</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of camapaignData" class="p-2">
+                        <td class="px-3">
+                            {{item.id}}
+                        </td>
+                        <td class="px-3">
+                            {{item.campaignName}}
+                        </td>
+                        <td class="px-3" *ngIf="item.status==='Completed'">
+                            <span class="bg px-4 complete">
+                                {{item.status}}
+                            </span>
+                        </td>
+                        <td class="px-3" *ngIf="item.status==='Draft'">
+                            <span class="bg draft">
+                                {{item.status}}
+                            </span>
+                        </td>
+                        <td class="px-3" *ngIf="item.status==='Pending'">
+                            <span class="bg pending">
+                                {{item.status}}
+                            </span></td>
+                        <td class="px-3">
+                            {{item.Ctr}}%
+                        </td>
+                        <td class="px-3">
+                            {{item.startDate}}
+                        </td>
+                        <td class="px-3"><div mdbDropdown class="dropdown" >
+                            <a
+                              class="btn btn-secondary dropdown-toggle px-4 dropdownMenuLink"
+                              role="button"
+                              mdbDropdownToggle
+                              aria-expanded="false"
+                            >
+                              Action
+                            </a> </div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
