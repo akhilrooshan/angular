@@ -1,0 +1,60 @@
+<section class="dashboard-wrapper">
+    <h1 class="fw-bold d-none d-lg-block heading">Manage Campaigns</h1>
+    <h4 class="d-none d-lg-block text-secondary subheading">Manage Campaigns</h4>
+    <div class="card cardMain">
+        <a (click)="newcampaign()" class="btn btn-primary text-light createCampaignBtn">Create Campaign</a>
+        <div class="card-body scrollbody">
+            <table mat-table [dataSource]="camapaignData" class="mat-elevation table table-hover">
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef> User Id. </th>
+                    <td mat-cell *matCellDef="let element"> pw{{element.id}} </td>
+                </ng-container>
+                <!-- Campaign Name Column -->
+                <ng-container matColumnDef="campaignName">
+                    <th mat-header-cell *matHeaderCellDef>Campaign Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.campaignName}} </td>
+                </ng-container>
+                <!-- Status Column -->
+                <ng-container matColumnDef="status">
+                    <th mat-header-cell *matHeaderCellDef> Status </th>
+                    <td mat-cell *matCellDef="let element">
+                        <mat-chip-list>
+                            <mat-chip class=" mat-chip mat-chip-C" *ngIf="element.status=='Completed' ">
+                                {{element.status}}
+                            </mat-chip>
+                            <mat-chip class=" mat-chip mat-chip-P" *ngIf="element.status=='Pending' ">
+                                {{element.status}}
+                            </mat-chip>
+                            <mat-chip class=" mat-chip mat-chip-D" *ngIf="element.status=='Draft' ">
+                                {{element.status}}
+                            </mat-chip>
+                        </mat-chip-list>
+                    </td>
+                </ng-container>
+                <!-- CTR Column -->
+                <ng-container matColumnDef="Ctr">
+                    <th mat-header-cell *matHeaderCellDef> CTR </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Ctr}} % </td>
+                </ng-container>
+                <!-- Start Column -->
+                <ng-container matColumnDef="startDate">
+                    <th mat-header-cell *matHeaderCellDef> Start Date </th>
+                    <td mat-cell *matCellDef="let element"> {{element.startDate| date:'dd MMM , h:mm a (yyy)'}}</td>
+                </ng-container>
+                <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef> Actions </th>
+                    <td mat-cell *matCellDef="let element"> <button mat-button [matMenuTriggerFor]="menu"
+                            class="btn btn-secondary dropdown-toggle px-4 dropdownMenuLink">Action</button>
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item (click)="changeStatus(element.id,'Pending')">Pending</button>
+                            <button mat-menu-item (click)="changeStatus(element.id,'Completed')">Completed</button>
+                            <button mat-menu-item (click)="changeStatus(element.id,'Draft')">Draft</button>
+                        </mat-menu>
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"> </tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+    </div>
+</section>

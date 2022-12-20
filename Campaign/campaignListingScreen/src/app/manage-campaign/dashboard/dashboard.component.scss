@@ -1,0 +1,75 @@
+.dashboard-wrapper {
+  margin-left: 9rem;
+  margin-top: 3rem;
+  .heading {
+    color: var(--dark-grey);
+  }
+  .subheading {
+    margin-top: 2rem;
+  }
+  .cardMain {
+    height: 45rem;
+  .scrollbody{
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+    .createCampaignBtn {
+      margin: 2rem;
+      width: 10%;
+    }
+    .dropdownMenuLink {
+      background-color: rgb(191, 191, 191);
+      color: var(--dark-grey);
+    }
+    .bg {
+      --bs-bg-opacity: 0.5;
+      border-radius: 20px 20px 20px 20px;
+    }
+    tr {
+      line-height: 3rem;
+      font-weight: 900;
+      color: var(--tabletextcolor);
+    }
+    th {
+      font-weight: 900;
+      font-size: 1.06rem;
+      color: var(--dark-grey);
+      position: -webkit-sticky; // this is for all Safari (Desktop & iOS), not for Chrome
+      position: sticky;
+      top: 0;
+      z-index: 1; 
+      background: #fff;
+    }
+  }
+  .card-body{
+    padding:0 3rem 1rem 3rem;
+  }
+  table{
+    width: 100%;
+    .mat-cell{
+      color:grey;
+      padding:1rem;
+      .btn{
+        padding: 0;
+        width:8em;
+      }.mat-chip{
+        width:7rem;
+        text-align: center;
+      }.mat-chip-P{
+        background-color: var(--shiny-blue) !important;
+        color: var(--navy-blue) !important;
+        padding: 1% 10%;
+      }.mat-chip-D{
+        background-color: var(--mid-grey) !important;
+        padding: 1% 13%;
+        color: var(--mid-grey-text) !important;
+      }.mat-chip-C{
+        background-color: var(--sucess) !important;
+        padding: 1% 7%;
+        color: var(--sucess-text) !important;
+      }
+    }
+  }
+}
