@@ -1,0 +1,33 @@
+{
+    "data": [
+      {
+          "id":1,
+        "name": "akhil",
+        "fullName": "Akhil Roshan Aboobacker",
+        "about": "To secure a challenging position in a reputable organization to expand my learnings, knowledge, and skills.",
+        "job":"FRont end developer",
+        "phone":6567265372,
+        "email":"akhilrooshan@gmail.com",
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj9f9NuAw6KXM_OBVOqut2D8682vihhqdkGFZ6TGk&s"
+      },
+      { "id":2,
+        "name": "ashwini",
+        "fullName": "Ashwini Yenmakaje S",
+        "about": "Seeking a challenging career with an MNC",
+        "job":"FRont end developer",
+        "phone":5644377621,
+        "email":"ashwiniys@gmail.com",
+        "image":"https://elireview.com/wp-content/uploads/2016/12/reed-profile-square.jpg"
+      },
+      {
+        "id":3,
+        "name": "anusha",
+        "fullName": "anusha bejai",
+        "about": "To make use of my interpersonal skills to achieve goals of a company that focuses on customer satisfaction and customer experience.",
+        "job":"back end developer",
+        "phone":8764375542,
+        "email":"anushapace@gmail.com",
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8APIGh1qJQWpTeRUjv8wuasnYHML6Vq4Z7zrOtys&s"
+      }
+    ]
+  }

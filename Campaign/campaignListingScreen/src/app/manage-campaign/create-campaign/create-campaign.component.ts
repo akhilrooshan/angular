@@ -54,6 +54,7 @@ export class CreateCampaignComponent implements OnInit {
   audienceCol: string[] = ['Demographic', 'Geographic', 'Commercial']
   filteredStreets: Observable<string[]>;
   // filteredAudience:Observable<string[]>;
+  isDoneSubmitting=true
   locationArray: location[] = locationData
   Isediting: any = []
   isAudienceTable = false
@@ -78,6 +79,7 @@ export class CreateCampaignComponent implements OnInit {
   constructor(private fb: FormBuilder,private service:ServicesService,private router:Router) {
   }
   ngOnInit(): void {
+    this.isDoneSubmitting=true
   }
   onEdit(id: any) {
     this.Isediting[id] = true;
@@ -224,5 +226,6 @@ export class CreateCampaignComponent implements OnInit {
       }
     }
     )
+    this.isDoneSubmitting=false
   }
   }

@@ -1,5 +1,7 @@
 import { Component ,ElementRef} from '@angular/core';
 import { Router } from '@angular/router';
+import { initializeApp } from "firebase/app";
+import { firebaseConfig } from './firebase.config';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,5 +17,8 @@ export class AppComponent {
     s.type = "text/javascript";
     s.src = "../assets/js/main.js";
     this.elementRef.nativeElement.appendChild(s);
+
+   initializeApp(firebaseConfig)
+
   }
 }

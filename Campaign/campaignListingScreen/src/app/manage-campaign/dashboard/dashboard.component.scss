@@ -18,6 +18,12 @@
     .createCampaignBtn {
       margin: 2rem;
       width: 10%;
+    }.ViewChartBtn{
+      margin: 2rem;
+      width: 10%;
+      position: absolute;
+      top:0;
+      right:10%;
     }
     .dropdownMenuLink {
       background-color: rgb(191, 191, 191);
@@ -57,19 +63,36 @@
       }.mat-chip{
         width:7rem;
         text-align: center;
+        justify-content: center;
       }.mat-chip-P{
         background-color: var(--shiny-blue) !important;
         color: var(--navy-blue) !important;
-        padding: 1% 10%;
       }.mat-chip-D{
         background-color: var(--mid-grey) !important;
-        padding: 1% 13%;
         color: var(--mid-grey-text) !important;
       }.mat-chip-C{
         background-color: var(--sucess) !important;
-        padding: 1% 7%;
         color: var(--sucess-text) !important;
       }
     }
+  }
+  .table{
+    border-collapse: separate;
+    .tabelId{
+      padding-left: 1.5rem;
+    }.tableCampaign{
+      padding-left: 0.9rem;
+    }.tableStatus{
+      padding-left: 2.5rem;
+    }.tableCtr{
+      padding-left: 1rem;
+    }.tableAction{
+      padding-left: 3rem;
+    }
+  }.viewchart{
+    position: absolute;
+    top:15%;
+    right:5%;
+    z-index: 3;
   }
 }

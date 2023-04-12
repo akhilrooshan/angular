@@ -1,0 +1,90 @@
+<main id="main" class="main">
+    <div *ngIf="( router.url == '/home/leaveList/createLeave')">
+        <form [formGroup]="leaveForm" (ngSubmit)="saveLeaveData() ">
+            <div class="pagetitle">
+                <h1>Leave List</h1>
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a routerLink="/leaveList">Leave List</a>
+                        </li>
+                        <li class="breadcrumb-item active">Create Leave</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="modal-body">
+                <!--Home-->
+                <div class="row">
+                    <div class="col-md-12"> <label for="inputName" class="form-label">Date<sup>*</sup></label>
+                        <input type="date" class="form-control" min="{{tommorow | date :'yyyy-MM-dd'}}" name="inputName"
+                            formControlName="leavedate" >
+                        <span class="text-danger" *ngIf="leavedate.invalid && (leavedate.dirty || leavedate.touched)">
+                            <div *ngIf="leavedate.errors?.['required']">
+                                Date is required.
+                            </div>
+                            </span>
+                    </div>
+                    <label for="inputReason" class="col-sm-2 col-form-label">Reason<sup>*</sup></label>
+                    <div class="col-md-12"><textarea class="form-control" style="height: 100px" name="inputReason"
+                            formControlName="leavereason"></textarea>
+                            <span class="text-danger" *ngIf="leavereason.invalid && (leavereason.dirty || leavereason.touched)">
+                                <div *ngIf="leavereason.errors?.['required']">
+                                    Reason is required.
+                                </div>
+                                <div *ngIf="leavereason.errors?.['minlength']">
+                                    reason should be atleast 3 letters.
+                                </div>
+                                </span>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Save
+                changes</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                (click)="leaveClose()">Close</button>
+        </form>
+    </div>
+    <div *ngIf="( router.url == '/home/leaveList/editLeave')">
+        <form [formGroup]="leaveForm" (ngSubmit)="onLeaveUpdate() ">
+            <div class="pagetitle">
+                <h1>Update Leave</h1>
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a routerLink="/leaveList">Leave list</a>
+                        </li>
+                        <li class="breadcrumb-item active">Update Leave</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="modal-body">
+                Home
+                <div class="row">
+                    <div class="col-md-12"> <label for="inputName" class="form-label">Date<sup>*</sup></label>
+                        <input type="date" class="form-control" min="{{tommorow | date :'yyyy-MM-dd'}}" name="inputName"
+                            formControlName="leavedate" [(ngModel)]="edit.leavedate" required>
+                            <span class="text-danger" *ngIf="leavedate.invalid && (leavedate.dirty || leavedate.touched)">
+                                <div *ngIf="leavedate.errors?.['required']">
+                                    Date is required.
+                                </div>
+                                </span>
+                    </div>
+                    <label for="inputReason" class="col-sm-2 col-form-label">Reason<sup>*</sup></label>
+                    <div class="col-md-12"><textarea class="form-control" style="height: 100px" name="inputReason"
+                            formControlName="leavereason" [(ngModel)]="edit.leavereason"></textarea>
+                            <span class="text-danger" *ngIf="leavereason.invalid && (leavereason.dirty || leavereason.touched)">
+                                <div *ngIf="leavereason.errors?.['required']">
+                                    Reason is required.
+                                </div>
+                                <div *ngIf="leavereason.errors?.['minlength']">
+                                    reason should be atleast 3 letters.
+                                </div>
+                                </span>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Save
+                changes</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                (click)="leaveClose()">Close</button>
+        </form>
+    </div>
+</main>

@@ -1,46 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-
-
 import { LoginComponent } from './auth/login/login.component';
-
-import { HomeComponent } from './home/home.component';
-import { HolidayComponent } from './holiday/holiday.component';
+import { HomeComponent } from './manageuser/home/home.component';
+import { HolidayComponent } from './manageholiday/holiday/holiday.component';
 import { AuthGuard } from './shared/auth.guard';
-import { LeavelistComponent } from './leavelist/leavelist.component';
-
+import { LeavelistComponent } from './manageleavelist/leavelist/leavelist.component';
 import { RoleGuard } from './shared/role.guard';
-import { LeavereqComponent } from './leavereq/leavereq.component';
+import { LeavereqComponent } from './manageleave/leavereq/leavereq.component';
 import { ProfileComponent } from './profile/profile.component';
-import { PopupComponent } from './popup/popup.component';
-
+import { DeleteComponent } from './delete/delete.component';
 const routes: Routes = [
   { path: '', component: LoginComponent },
-
-  
   { path: 'login', component: LoginComponent },
- 
-
-  { path: 'home', component: HomeComponent,canActivate:[RoleGuard] },
-  { path: 'holiday', component:HolidayComponent,canActivate:[RoleGuard] },
-  { path: 'leaveReq', component:LeavereqComponent,canActivate:[RoleGuard] },
-  { path: 'leaveList', component:LeavelistComponent,canActivate:[AuthGuard] },
+  { path: 'home', loadChildren: () => import('./manageuser/manageuser.module').then(m => m.ManageuserModule),canActivate:[RoleGuard] },
+  { path: 'home/leaveList', loadChildren: () => import('./manageleavelist/manageleavelist.module').then(x=>x.ManageleavelistModule),canActivate:[AuthGuard] },
   { path: 'profile', component:ProfileComponent,canActivate:[AuthGuard] },
-  { path: 'editUser', component:PopupComponent,canActivate:[RoleGuard] },
-  { path: 'createUser', component:PopupComponent,canActivate:[RoleGuard] },
-  { path: 'editHoliday', component:PopupComponent,canActivate:[RoleGuard] },
-  { path: 'createHoliday', component:PopupComponent,canActivate:[RoleGuard] },
-  { path: 'createLeave', component:PopupComponent,canActivate:[AuthGuard] },
-  { path: 'editLeave', component:PopupComponent,canActivate:[AuthGuard] },
-
-
-
-
-
-  
+  { path: 'deleteLR', component:DeleteComponent,canActivate:[RoleGuard] },
+  { path: 'deleteUser', component:DeleteComponent,canActivate:[RoleGuard] },
+  { path: 'deleteLL', component:DeleteComponent,canActivate:[AuthGuard] },
+  { path: 'deleteHoliday', component:DeleteComponent,canActivate:[RoleGuard] },
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

@@ -1,0 +1,30 @@
+[
+        {
+            "id": 1,
+            "movieName": "PK",
+            "plot": "An alien astronomer who visits the earth ,somehow lost his space remote. He faces difficulty in finding the cultures and logic of societies",
+            "rating": "8.3",
+            "image": "https://wallpapercave.com/wp/wp7388120.jpg"
+        },
+        {
+            "id": 2,
+            "movieName": "Pathan",
+            "plot": "Pathan ,A raw agent tries to save the world from an ex corrupted raw agent",
+            "rating": "7.4",
+            "image": "https://m.media-amazon.com/images/M/MV5BM2QzM2JiNTMtYjU4Ny00MDZkLTk3MmUtYTRjMzVkZGJlNmYyXkEyXkFqcGdeQXVyMTUzNTgzNzM0._V1_FMjpg_UX1000_.jpg"
+        },
+        {
+            "id": 3,
+            "movieName": "Bheeshma parvam",
+            "plot": "story of an oldman sitting in chair and giving orders to aniyankuttans",
+            "rating": "7.6",
+            "image": "https://m.media-amazon.com/images/M/MV5BOTVmMDMwYWMtOGM1Ni00YmFiLTg4OGItMjEyYTQ3MDQ1MzVmXkEyXkFqcGdeQXVyMjkxNzQ1NDI@._V1_.jpg"
+        },
+        {
+            "id": 13,
+            "movieName": "Bheeshma parvam",
+            "plot": "story of an oldman sitting in chair and giving orders to aniyankuttans",
+            "rating": "7.6",
+            "image": "https://m.media-amazon.com/images/M/MV5BOTVmMDMwYWMtOGM1Ni00YmFiLTg4OGItMjEyYTQ3MDQ1MzVmXkEyXkFqcGdeQXVyMjkxNzQ1NDI@._V1_.jpg"
+        }
+    ]

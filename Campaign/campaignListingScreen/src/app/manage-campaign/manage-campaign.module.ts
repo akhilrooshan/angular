@@ -19,10 +19,19 @@ import {MatChipsModule} from '@angular/material/chips';
 import { MatListModule } from '@angular/material/list';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatSortModule} from '@angular/material/sort';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatDialogModule} from '@angular/material/dialog';
+import { HighchartsChartModule } from 'highcharts-angular';
+import { ConfirmDialogueComponent } from './confirm-dialogue/confirm-dialogue.component';
+import {MatRippleModule} from '@angular/material/core';
+import { IdPipe } from '../pipes/id.pipe';
 @NgModule({
   declarations: [
     DashboardComponent,
     CreateCampaignComponent,
+    ConfirmDialogueComponent,
+    IdPipe
   ],
   imports: [
     CommonModule,
@@ -43,7 +52,12 @@ import {MatMenuModule} from '@angular/material/menu';
     MatChipsModule,
     MatListModule,
     MatRadioModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatDialogModule,
+    HighchartsChartModule,
+    MatRippleModule
   ]
 })
 export class ManageCampaignModule { }

@@ -1,0 +1,150 @@
+<main id="main" class="main">
+   <div class="pagetitle">
+      <h1>Leave List</h1>
+
+
+   </div>
+
+   <!-- request leave -->
+   <section class="section">
+      <div class="row">
+
+
+         <div class="col-lg-6">
+            <div class="my-2">
+               <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#leaveModal"
+                  (click)="addLeave()"> Add leave </button>
+            </div>
+            <div class="card">
+               <div class="card-body">
+                  <h5 class="card-title">Pending leaves</h5>
+                  <table class="table table-striped">
+                     <thead>
+                        <tr>
+
+
+                           <th scope="col">Date</th>
+                           <th scope="col">Reason</th>
+
+
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr *ngFor="let items of leave;let i=index">
+
+
+                           <td *ngIf="checkname==items.name">{{items.leavedate}}</td>
+                           <td *ngIf="checkname==items.name">{{items.leavereason}}</td>
+
+                           <td *ngIf="checkname==items.name"> <button type="button" class="btn btn-success"
+                                 data-bs-toggle="modal" data-bs-target="#leaveModal" (click)="onEdit(items)"> Update
+                              </button></td>
+                        
+
+                           <td *ngIf="checkname==items.name"><button type="button" class="btn btn-danger"
+                                 data-bs-target="#leaveModal" (click)="onDel(items)">  Delete </button></td>
+
+              
+
+                        </tr>
+
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+
+         </div>
+      </div>
+   </section>
+
+
+   <!-- end of request leave -->
+
+   <!-- confirmed leaves -->
+
+
+   <section class="section">
+      <div class="row">
+
+
+         <div class="col-lg-6">
+
+            <div class="card">
+               <div class="card-body">
+                  <h5 class="card-title">Confirmed leaves</h5>
+                  <table class="table table-striped">
+                     <thead>
+                        <tr>
+
+
+                           <th scope="col">Date</th>
+                           <th scope="col">Reason</th>
+
+
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr *ngFor="let lock of confirm;let i=index">
+
+
+
+
+                           <td *ngIf="checkname==lock.name">{{lock.leavedate}}</td>
+                           <td *ngIf="checkname==lock.name">{{lock.leavereason}}</td>
+
+                        </tr>
+
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+
+         </div>
+      </div>
+   </section>
+
+
+   <!-- end of confirmed leaves -->
+
+
+
+   <section class="section">
+      <div class="row">
+
+
+         <div class="col-lg-6">
+
+            <div class="card">
+               <div class="card-body">
+                  <h5 class="card-title">Upcoming Holidays</h5>
+                  <table class="table table-striped">
+                     <thead>
+                        <tr>
+
+                           <th scope="col">Date</th>
+                           <th scope="col">Reason</th>
+
+
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr *ngFor="let day of holiday;let i=index">
+
+
+
+
+                           <td>{{day.date}}</td>
+                           <td>{{day.reason}}</td>
+
+                        </tr>
+
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+
+         </div>
+      </div>
+   </section>
+
+

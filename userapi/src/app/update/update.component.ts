@@ -15,8 +15,9 @@ export class UpdateComponent implements OnInit {
   id:any;
   onSubmit(data:any){
     this.id =  this.route.snapshot.paramMap.get('id'); 
-    console.log(this.id)
-    console.log("Updated Data",data.value);
+    
+
+
     this.userService.updateUser(this.id,data.value).subscribe({
       
 

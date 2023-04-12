@@ -1,10 +1,11 @@
 <div class="container mt-4 col-4 col-offset-6">
-
     <form #userUpdate = "ngForm"  (ngSubmit) = "onSubmit(userUpdate)">
-
+      <div class="mb-3">
+        <label for="id" class="form-label text-secondary">URL ID</label>
+        <input type="text" name = "id" ngModel class="form-control" id="id" value="{{id}}" readonly>
+      </div>
         <div class="mb-3 form-group">
           <label for="FirstName" class="form-label  text-secondary">Title</label>
-  
           <select name="watches" id="watches" name = "title" ngModel class="form-control" aria-placeholder="SELECT">
             <option value="" selected data-default class="text-secondary">SELECT</option>
             <option value="mr">mr</option>
@@ -12,30 +13,19 @@
             <option value="mr">miss</option>
             <option value="mr">ms</option>
           </select>
-  
         </div>
-  
-        
-  
         <div class="mb-3">
           <label for="FirstName" class="form-label text-secondary">FirstName</label>
-          <input type="text" name = "firstName" ngModel class="form-control" id="FirstName" aria-describedby="emailHelp" required>
+          <input type="text" name = "firstName"  ngModel class="form-control" id="FirstName"  required>
         </div>
-  
         <div class="mb-3">
           <label for="LastName" class="form-label text-secondary">LastName</label>
           <input type="text" name = "lastName" ngModel class="form-control" id="LastName" required>
         </div>
-  
-       
-       
         <div class="mb-3">
             <label for="samplefile" class="form-label">URL</label>
             <input type="text" name = "picture" ngModel multiple class="form-control" id="samplefile" required>
           </div>
-  
-  
         <button type = "submit" class="btn btn-primary bg-danger" >Submit</button>
       </form>
-  
   </div>

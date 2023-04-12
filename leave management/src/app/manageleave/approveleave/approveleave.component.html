@@ -1,0 +1,36 @@
+<main id="main" class="main">
+        <!-- This part is triggered when the user tries to approve a leave -->
+        <div *ngIf="( router.url == '/home/leaveReq/confirmApprove')">
+                <form (ngSubmit)="onApproveLeave() ">
+                        <div class="pagetitle">
+                                <h1>Approve Leave</h1>
+                                <nav>
+                                        <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a routerLink="/leaveReq">Leave Requests</a>
+                                                </li>
+                                                <li class="breadcrumb-item active">Approve Leave</li>
+                                        </ol>
+                                </nav>
+                        </div>
+                                <div class="row">
+                                        <div class="col-md-6 m-3"> <label for="inputName"
+                                                        class="form-label">Name</label> <input type="text"
+                                                        class="form-control" name="inputName" [(ngModel)]="edit.name"
+                                                        readonly></div>
+                                        <div class="col-md-6 m-3"> <label for="inputDate"
+                                                        class="form-label">Date</label> <input type="date"
+                                                        class="form-control" name="inputDate"
+                                                        [(ngModel)]="edit.leavedate" required="" readonly>
+                                        </div>
+                                        <div class="col-md-6 m-3"> <label for="inputReason"
+                                                        class="form-label">Reason</label> <input type="text"
+                                                        class="form-control" name="inputReason"
+                                                        [(ngModel)]="edit.leavereason" readonly></div>
+                                </div>
+                        <button class="btn btn-primary" type="submit">Approve</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                (click)="closeUpdate()">Close</button>
+                </form>
+        </div>
+        <!-- end of approve leave page -->
+</main>

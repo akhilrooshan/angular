@@ -1,0 +1,104 @@
+<main id="main" class="main">
+      <div *ngIf="( router.url == '/deleteLR' || router.url=='/deleteLL')">
+            <form (ngSubmit)="deleteLeaveReq() ">
+
+                  <h2>Save User</h2>
+                  <div class="modal-body">
+                        <div class="row">
+                              <div *ngIf="( router.url == '/deleteLR' )" class="col-md-6 m-3"> <label for="inputName"
+                                          class="form-label">Name</label> <input type="text" class="form-control"
+                                          name="inputName" [(ngModel)]="edit.name" readonly></div>
+
+                              <div class="col-md-6 m-3"> <label for="inputDate" class="form-label">Date</label> <input
+                                          type="date" class="form-control" name="inputDate" [(ngModel)]="edit.leavedate"
+                                          required="" readonly>
+                              </div>
+                              <div class="col-md-6 m-3"> <label for="inputReason" class="form-label">Reason</label>
+                                    <input type="text" class="form-control" name="inputReason"
+                                          [(ngModel)]="edit.leavereason" readonly></div>
+
+
+                        </div>
+
+                  </div>
+
+                  <button class="btn btn-danger" type="submit">Confirm delete</button>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        (click)="closeLeave()">Close</button>
+
+            </form>
+      </div>
+
+
+      <div *ngIf="( router.url == '/deleteUser')">
+            <form (ngSubmit)="onDeleteUser() ">
+
+                  <h2>Save User</h2>
+
+                  <div class="modal-body">
+
+                        <!--Home -->
+                        <div class="row">
+                              <div class="col-md-4"> <label for="inputName" class="form-label">Name</label>
+                                    <input type="text" class="form-control" name="inputName" [(ngModel)]="edit.username"
+                                          readonly>
+                              </div>
+                              <div class="col-md-4"> <label for="inputEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" name="inputEmail" [(ngModel)]="edit.email"
+                                          readonly>
+                              </div>
+                              <div class="col-md-4"> <label for="inputphone" class="form-label">phone</label>
+                                    <input type="number" class="form-control" name="inputphone" [(ngModel)]="edit.phone"
+                                          readonly>
+                              </div>
+
+                        </div>
+                  </div>
+
+                  <button class="btn btn-danger" type="submit">Delete User</button>
+
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        (click)="userClose()">Close</button>
+
+
+            </form>
+      </div>
+
+
+
+      <div *ngIf="( router.url == '/deleteHoliday')">
+            <form (ngSubmit)="onHolidayDelete()">
+
+                  <div class="pagetitle">
+                        <h1>Delete Holiday</h1>
+                        <nav>
+                              <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a routerLink="/holiday">Holiday</a></li>
+                                    <li class="breadcrumb-item active">Delete Holiday</li>
+                              </ol>
+                        </nav>
+                  </div>
+
+                  <div class="modal-body">
+
+
+                        <div class="row">
+                              <div class="col-md-12"> <label for="inputName" class="form-label">Date<sup>*</sup></label>
+                                    <input type="date" name="inputName" class="form-control" [(ngModel)]="edit.date" readonly>
+                              </div>
+
+                              <label for="inputReason" class="col-sm-2 col-form-label">Reason<sup>*</sup></label>
+                              <div class="col-md-12"><textarea class="form-control"  name="inputReason" style="height: 100px"
+                                          [(ngModel)]="edit.reason" readonly></textarea></div>
+                        </div>
+
+                  </div>
+                  <button class="btn btn-danger" type="submit">Confirm Delete</button>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        (click)="holidayClose()">Close</button>
+
+            </form>
+      </div>
+
+
+</main>

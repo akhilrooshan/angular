@@ -1,49 +1,43 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layouts/header/header.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
-
 import { LoginComponent } from './auth/login/login.component';
-
-import { HomeComponent } from './home/home.component';
-import { HolidayComponent } from './holiday/holiday.component';
+import { HomeComponent } from './manageuser/home/home.component';
+import { HolidayComponent } from './manageholiday/holiday/holiday.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LeavelistComponent } from './leavelist/leavelist.component';
-import { LeavereqComponent } from './leavereq/leavereq.component';
+import { LeavelistComponent } from './manageleavelist/leavelist/leavelist.component';
+import { LeavereqComponent } from './manageleave/leavereq/leavereq.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HttpClientModule } from '@angular/common/http';
-import { PopupComponent } from './popup/popup.component';
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DeleteComponent } from './delete/delete.component';
+import { AddUserComponent } from './manageuser/add-user/add-user.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-
-  
     LoginComponent,
-  
     HomeComponent,
     HolidayComponent,
     LeavelistComponent,
     LeavereqComponent,
     ProfileComponent,
-    PopupComponent,
-
-
+    DeleteComponent,
+    AddUserComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

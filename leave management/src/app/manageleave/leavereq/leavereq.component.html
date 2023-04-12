@@ -1,0 +1,52 @@
+<main id="main" class="main">
+   <div class="pagetitle">
+      <h1>Leave Request</h1>
+
+
+   </div>
+
+   <!-- request leave -->
+   <section class="section">
+      <div class="row">
+
+
+         <div class="col-lg-6">
+
+            <div class="card">
+               <div class="card-body">
+                  <h5 class="card-title">Pending leaves</h5>
+                  <table class="table table-striped">
+                     <thead>
+                        <tr>
+                   
+                           <th scope="col">Name</th>
+                           <th scope="col">Date</th>
+                           <th scope="col">Reason</th>
+
+
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr *ngFor="let items of leave;let i=index">
+                        
+                     
+                              <td>{{items.name}}</td>
+                              <td>{{items.leavedate}}</td>
+                              <td>{{items.leavereason}}</td>
+                              <td> <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                    data-bs-target="#leaveModal" (click)="onEdit(items)"> Approve </button></td>
+                              <td><button type="button" class="btn btn-danger"
+                                    (click)="onDel(items)"> Delete </button></td>
+                        
+                        </tr>
+
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+
+         </div>
+      </div>
+   </section>
+
+</main>

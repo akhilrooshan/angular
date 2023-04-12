@@ -1,19 +1,14 @@
 <main id="main" class="main">
-
     <section class="section profile">
         <div class="row">
-
             <div class="col-xl-8">
                 <div class="card">
                     <div class="card-body pt-3">
-
                         <div class="tab-content pt-2">
                             <div *ngFor="let i of data">
                                 <div *ngIf="i.name==pro">
                                 <div class="tab-pane fade show active profile-edit pt-3" id="profile-edit">
-
                                     <!-- <form #profileForm="ngForm" > -->
-
                                         <div class="row mb-3">
                                         <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile
                                             Image</label>
@@ -33,20 +28,15 @@
                                                 <!-- <input name="fullName" type="text"
                                                     class="form-control" id="fullName" [(ngModel)]="i.fullName" readonly> -->
                                                <p class="h6 bg-dark text-secondary p-2 rounded-top" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;--bs-bg-opacity: .1">{{i.fullName}}</p> 
-                                                
-                                                
                                                 </div>
                                         </div>
                                         <div class="row mb-3">
                                             <label for="about" class="col-md-4 col-lg-3 col-form-label">About</label>
                                             <div class="col-md-8 col-lg-9">
-                                                
                                                 <!-- <textarea name="about" class="form-control"
                                                     id="about"
                                                     style="height: 100px" [(ngModel)]='i.about' readonly></textarea> -->
-
                                                     <p class="h6 bg-dark text-secondary p-2" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;--bs-bg-opacity: .1">{{i.about}}</p> 
-
                                             </div>
                                         </div>
                                         <!-- <div class="row mb-3">
@@ -59,9 +49,7 @@
                                             <div class="col-md-8 col-lg-9"> 
                                                 <!-- <input name="job" type="text"
                                                     class="form-control" id="Job" [(ngModel)]="i.job" readonly> -->
-
                                                     <p class="h6 bg-dark text-secondary p-2" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;--bs-bg-opacity: .1">{{i.job}}</p>
-                                                
                                                 </div>
                                         </div>
                                         <!-- <div class="row mb-3">
@@ -80,7 +68,6 @@
 <!--                                                 
                                                 <input name="phone" type="text"
                                                     class="form-control" id="Phone" [(ngModel)]="i.phone" readonly> -->
-                                                
                                                     <p class="h6 bg-dark text-secondary p-2" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;--bs-bg-opacity: .1">{{i.phone}}
                                                 </div>
                                         </div>
@@ -88,12 +75,9 @@
                                             <label for="email"
                                                 class="col-md-4 col-lg-3 col-form-label">email</label>
                                             <div class="col-md-8 col-lg-9"> 
-                                                
                                                 <!-- <input name="username" type="email"
                                                     class="form-control" id="email" [(ngModel)]="i.email" readonly> -->
-
                                                     <p class="h6 bg-dark text-secondary p-2" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;--bs-bg-opacity: .1">{{i.email}}</p>
-                                                
                                                 </div>
                                         </div>
                                         <!-- <div class="row mb-3">

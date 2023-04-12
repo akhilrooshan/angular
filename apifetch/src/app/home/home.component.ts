@@ -13,24 +13,27 @@ import { UsersService } from '../users/users.service';
 })
 export class HomeComponent {
   title = 'api';
-  p:any;
-  data:any=[]
-  dataP:any=[]
- 
-  constructor(private userService:UsersService){
-    
-    this.userService.getData().subscribe((datan:any)=>{
+  p: any;
+  data: any = []
+  dataP: any = []
+
+  constructor(private userService: UsersService) {
+
+    this.userService.getData().subscribe((datan: any) => {
       console.log(datan)
-      
+
       this.data = datan.data
-
-  
-
-
-      
     })
 
 
+
   }
- 
+  
+  delete(){
+    
+  }
+
+
+
 }
+

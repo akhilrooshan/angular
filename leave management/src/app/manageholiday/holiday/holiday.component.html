@@ -1,0 +1,38 @@
+<main id="main" class="main">
+   <h1>Holidays</h1>
+   <section class="section">
+      <div class="row">
+         <div class="col-lg-6">
+            <div class="my-2">
+               <!-- button for adding holiday -->
+               <button type="button" class="btn btn-success" (click)="addHoliday()" data-bs-toggle="modal"
+                  data-bs-target="#holidayModal"> Add holiday </button>
+            </div>
+            <div class="card">
+               <div class="card-body">
+                  <table class="table table-striped">
+                     <thead>
+                        <tr>
+                           <th scope="col">Date</th>
+                           <th scope="col">Reason</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr *ngFor="let items of holiday;let i=index">
+                           <td>{{items.date}}</td>
+                           <td>{{items.reason}}</td>
+                           <!-- buttons for edit and delete -->
+                           <td> <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                 data-bs-target="#holidayModal" (click)="onEdit(items)"> Update </button></td>
+                           <td><button type="button" class="btn btn-danger" data-bs-target="#holidayModal"
+                                 (click)="onDel(items)">Delete
+                              </button></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+</main>

@@ -314,14 +314,14 @@
         </div>
       </form>
     </mat-step>
-    <mat-step>
+    <mat-step> 
       <ng-template matStepLabel>Done</ng-template>
       <div class="card card-end p-3 col-3">
       <p>Click on Confirm Submit to finish.</p>
       <div>
         <button mat-button matStepperPrevious  class="float-left text-dark py-1 px-5 mb-2 backBtn">Back</button>
         <button mat-button (click)="stepper.reset()" class="text-dark float-right text-light py-1 px-2 mb-2 mx-3 backBtn">Reset</button>
-        <button mat-button (click)="done()" class=" bg-primary float-right text-light py-1 px-2 mb-2 mx-3">Confirm Submit</button>
+        <button mat-button (click)="done()" class=" bg-primary float-right text-light py-1 px-2 mb-2 mx-3" [disabled]="!isDoneSubmitting" >Confirm Submit</button>
       </div>
       </div>
     </mat-step>

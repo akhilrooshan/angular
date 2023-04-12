@@ -1,0 +1,113 @@
+<main id="main" class="main">
+        <!--  to create a new user -->
+        <div *ngIf="( router.url == '/home/createUser')">
+                <form [formGroup]="userForm" (ngSubmit)="saveUserData() ">
+                        <div class="pagetitle">
+                                <h1>Create User</h1>
+                                <nav>
+                                        <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+                                                <li class="breadcrumb-item active">Create User</li>
+                                        </ol>
+                                </nav>
+                        </div>
+                        <div class="row">
+                                <div class="col-md-4"> <label for="inputName"
+                                                class="form-label">Name<sup>*</sup></label>
+                                        <input type="text" class="form-control" name="inputName"
+                                                formControlName="username" required>
+                                        <span class="text-danger"
+                                                *ngIf="username.invalid && (username.dirty || username.touched)">
+                                                <div *ngIf="username.errors?.['required']">
+                                                        Name is required.
+                                                </div>
+                                        </span>
+                                </div>
+                                <div class="col-md-4"> <label for="inputEmail"
+                                                class="form-label">Email<sup>*</sup></label>
+                                        <input type="email" class="form-control" name="inputEmail"
+                                                formControlName="email" required
+                                                pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+                                        <span class="text-danger"
+                                                *ngIf="email.invalid && (email.dirty || email.touched)">
+                                                <div *ngIf="email.errors?.['required']">
+                                                        Email is required.
+                                                </div>
+                                                <div *ngIf="email.errors?.['pattern']">
+                                                        Its not in email format
+                                                </div>
+                                        </span>
+                                </div>
+                                <div class="col-md-4"> <label for="inputphone"
+                                                class="form-label">phone<sup>*</sup></label>
+                                        <input type="number" class="form-control" name="inputphone"
+                                                formControlName="phone">
+                                        <span class="text-danger"
+                                                *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+                                                <div *ngIf="phone.errors?.['required']">
+                                                        phone number is required.
+                                                </div>
+                                                <div *ngIf="phone.errors?.['pattern']">
+                                                        phone number must be of 10 digit
+                                                </div>
+                                        </span>
+                                </div>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Save
+                                changes</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                (click)="userClose()">Close</button>
+                </form>
+        </div>
+        <!-- end of create user -->
+        <div *ngIf="( router.url == '/home/editUser')">
+                <form [formGroup]="userForm" (ngSubmit)="onUserUpdate() ">
+                        <h2>Save User</h2>
+                        <div class="modal-body">
+                                <!--Home -->
+                                <div class="row">
+                                        <div class="col-md-4"> <label for="inputName" class="form-label">Name</label>
+                                                <input type="text" class="form-control" name="inputName"
+                                                        formControlName="username" [(ngModel)]="edit.username" required>
+                                                <span class="text-danger"
+                                                        *ngIf="username.invalid && (username.dirty || username.touched)">
+                                                        <div *ngIf="username.errors?.['required']">
+                                                                Name is required.
+                                                        </div>
+                                                </span>
+                                        </div>
+                                        <div class="col-md-4"> <label for="inputEmail" class="form-label">Email</label>
+                                                <input type="email" class="form-control" name="inputEmail"
+                                                        formControlName="email" [(ngModel)]="edit.email" required>
+                                                <span class="text-danger"
+                                                        *ngIf="email.invalid && (email.dirty || email.touched)">
+                                                        <div *ngIf="email.errors?.['required']">
+                                                                Email is required.
+                                                        </div>
+                                                        <div *ngIf="email.errors?.['pattern']">
+                                                                Its not in email format
+                                                        </div>
+                                                </span>
+                                        </div>
+                                        <div class="col-md-4"> <label for="inputphone" class="form-label">phone</label>
+                                                <input type="number" class="form-control" name="inputphone"
+                                                        formControlName="phone" [(ngModel)]="edit.phone" required>
+                                                <span class="text-danger"
+                                                        *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+                                                        <div *ngIf="phone.errors?.['required']">
+                                                                phone number is required.
+                                                        </div>
+                                                        <div *ngIf="phone.errors?.['pattern']">
+                                                                phone number must be of 10 digit
+                                                        </div>
+                                                </span>
+                                        </div>
+                                </div>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Save
+                                changes</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                (click)="userClose()">Close</button>
+                </form>
+        </div>
+</main>

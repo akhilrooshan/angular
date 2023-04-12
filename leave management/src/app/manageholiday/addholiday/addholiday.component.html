@@ -1,0 +1,88 @@
+<main id="main" class="main">
+        <!-- This part is triggered when the user tries to create a new holiday -->
+        <div *ngIf="( router.url == '/home/holiday/createHoliday')">
+                <form [formGroup]="HolidayForm" (ngSubmit)="saveHolidayData() ">
+                        <h1>Create Holiday</h1>
+                        <nav>
+                                <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a routerLink="/holiday">Holiday</a></li>
+                                        <li class="breadcrumb-item active">Create Holiday</li>
+                                </ol>
+                        </nav>
+                        <div class="row">
+                                <div class="col-md-12">
+                                         <label for="inputName"
+                                                class="form-label">Date<sup>*</sup></label>
+                                        <input type="date" class="form-control" min="{{tommorow | date :'yyyy-MM-dd'}}"
+                                                name="inputName" formControlName="date" required>
+                                        <span class="text-danger" *ngIf="date.invalid && (date.dirty || date.touched)">
+                                                <div *ngIf="date.errors?.['required']">
+                                                        Date is required.
+                                                </div>
+                                        </span>
+                                </div>
+                                <label for="inputReason" class="col-sm-2 col-form-label">Reason<sup>*</sup></label>
+                                <div class="col-md-12"><textarea class="form-control" style="height: 100px"
+                                                name="inputReason" formControlName="reason"></textarea>
+                                        <span class="text-danger"
+                                                *ngIf="reason.invalid && (reason.dirty || reason.touched)">
+                                                <div *ngIf="reason.errors?.['required']">
+                                                        Reason is required.
+                                                </div>
+                                                <div *ngIf="reason.errors?.['minlength']">
+                                                        reason should be atleast 3 letters.
+                                                </div>
+                                        </span>
+                                </div>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Save
+                                changes</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                (click)="holidayClose()">Close</button>
+                </form>
+        </div>
+        <!-- end of create holiday page -->
+        <!-- This part is triggered when the user tries to create a new holiday -->
+        <div *ngIf="( router.url == '/home/holiday/editHoliday')">
+                <form [formGroup]="HolidayForm" (ngSubmit)="onHolidayUpdate() ">
+                        <h1>Update Holiday</h1>
+                        <nav>
+                                <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a routerLink="/holiday">Holiday</a></li>
+                                        <li class="breadcrumb-item active">Update Holiday</li>
+                                </ol>
+                        </nav>
+                        <div class="row">
+                                <div class="col-md-12"> <label for="inputName"
+                                                class="form-label">Date<sup>*</sup></label>
+                                        <input type="date" class="form-control" min="{{tommorow | date :'yyyy-MM-dd'}}"
+                                                name="inputName" formControlName="date" [(ngModel)]="edit.date"
+                                                required>
+                                        <span class="text-danger" *ngIf="date.invalid && (date.dirty || date.touched)">
+                                                <div *ngIf="date.errors?.['required']">
+                                                        Date is required.
+                                                </div>
+                                        </span>
+                                </div>
+                                <label for="inputReason" class="col-sm-2 col-form-label">Reason<sup>*</sup></label>
+                                <div class="col-md-12"><textarea class="form-control" style="height: 100px"
+                                                name="inputReason" formControlName="reason"
+                                                [(ngModel)]="edit.reason"></textarea>
+                                        <span class="text-danger"
+                                                *ngIf="reason.invalid && (reason.dirty || reason.touched)">
+                                                <div *ngIf="reason.errors?.['required']">
+                                                        Reason is required.
+                                                </div>
+                                                <div *ngIf="reason.errors?.['minlength']">
+                                                        reason should be atleast 3 letters.
+                                                </div>
+                                        </span>
+                                </div>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Save
+                                changes</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                (click)="holidayClose()">Close</button>
+                </form>
+        </div>
+</main>

@@ -7,6 +7,11 @@ export class ServicesService {
   constructor(private http:HttpClient) {
     // this.getData();
    }
+   getToken(token:any){
+     let url = 'http://localhost:8700/login';
+     console.log(this.http.get(url))
+     return this.http.post(url,token)
+   }
   getData() {
     let url = "http://localhost:8700/api/campaigns";
     console.log(this.http.get(url))

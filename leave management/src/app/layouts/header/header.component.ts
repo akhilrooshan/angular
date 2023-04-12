@@ -10,40 +10,40 @@ import { ServicesService } from 'src/app/service/services.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  data:any=[];
-  name=localStorage.getItem("name")
-  user=localStorage.getItem("userType")
-  constructor(@Inject(DOCUMENT) private document: Document,private router:Router,private userService:ServicesService) {
-
+  //array for storing the profile data loaded from the api
+  data: any = [];
+  /*
+  @variable name stores the name from localstorage of key name
+  @variable usertype stores the role of user from localstorage of key usertype
+  */
+  name = localStorage.getItem("name")
+  user = localStorage.getItem("userType")
+  /*
+  @description:
+  private document variable  document class
+  private router variable created for router class,
+  private userService variable created for services.service file.
+  */
+  constructor(@Inject(DOCUMENT) private document: Document, private router: Router, private userService: ServicesService) {
+    //fetching the data from the api
     this.userService.getData().subscribe((datan: any) => {
-      console.log(datan)
-      
-  
       this.data = datan.data
-
     })
-   }
-
+  }
   ngOnInit(): void {
   }
-  sidebarToggle()
-  {
-    //toggle sidebar function
+  sidebarToggle() {
+    //toggle the sidebar when clicking 
     this.document.body.classList.toggle('toggle-sidebar');
   }
-
-
-  // logout function
-
-  logout()
-  {
+  // invokes when clicks on logout
+  logout() {
+    /*
+    removes the keys token,userType,name,login from the localstorage 
+    */
     localStorage.removeItem("token")
     localStorage.removeItem("userType")
     localStorage.removeItem("name")
     this.router.navigate(["login"])
-
   }
- 
-  
 }

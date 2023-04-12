@@ -1,13 +1,11 @@
 <div class="container" mt-10>
     <div class = "row">
-     
       <div class="container" mt-10>
         <div class = "row">
           <div *ngFor = "let item of data | paginate: { itemsPerPage: 12, currentPage: p }" class = "d-flex col-md-3">
             <div  class="card" style="width: 25rem;margin-top: 10px;">
               <img src="{{ item.picture}}" class="card-img-top" alt="...">
               <div class="card-body">
-                
                 <button class="btn btn-primary" style="margin-right:8px ;">{{ item.title | titlecase}}.{{ item.firstName | titlecase}} {{ item.lastName | titlecase}}</button>
                 <button (click)="deleteItem(item)" routerLink="delete/{{item.id}}" class = "btn" style = "background-color: rgb(219, 139, 139);">
                   Delete
@@ -15,7 +13,6 @@
                 <a  routerLink="/update/{{item.id}}"> <button class="m-2 btn text-white"  style="background-color: blueviolet;">Update user</button>
                 </a>
               </div>
-             
             </div>
           </div>
         </div>
@@ -26,4 +23,3 @@
         <br>
         <br>
       </div>
-      
